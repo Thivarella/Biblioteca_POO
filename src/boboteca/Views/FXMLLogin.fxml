@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boboteca.Controllers.FXMLLoginController">
+   <children>
+      <VBox alignment="CENTER" layoutX="-1.0" prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: white;" stylesheets="@../styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTextField fx:id="cpfTextLogin" labelFloat="true" promptText="CPF" style="-fx-border-color: none;">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="60.0" right="60.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <JFXTextField fx:id="passwordTextLogin" labelFloat="true" promptText="Senha" style="-fx-border-color: none;">
+               <VBox.margin>
+                  <Insets bottom="15.0" left="60.0" right="60.0" top="15.0" />
+               </VBox.margin>
+            </JFXTextField>
+            <HBox alignment="CENTER" prefHeight="56.0" prefWidth="400.0">
+               <children>
+                  <JFXButton onAction="#cancelLogin" ripplerFill="#f8f7fc" stylesheets="@../bootstrapfx.css" text="Cancelar">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-danger" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton onAction="#tryLogin" ripplerFill="WHITE" text="Entrar">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-primary" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets left="30.0" right="30.0" />
+                     </HBox.margin>
+                     <stylesheets>
+                        <URL value="@../bootstrapfx.css" />
+                     </stylesheets>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
