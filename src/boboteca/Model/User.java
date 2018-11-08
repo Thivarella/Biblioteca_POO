@@ -4,13 +4,16 @@ public class User {
     private Integer id;
     private String name;
     private String password;
-    private Integer gender;
-    private Integer category;
+    private Generic gender;
+    private Generic category;
     private Address address;
     private String telephone;
     private Boolean isLibrarian;
 
-    public User(Integer id, String name, Integer gender, Integer category, Address address, String telephone, Boolean isLibrarian) {
+    public User() {
+    }
+
+    public User(Integer id, String name, Generic gender, Generic category, Address address, String telephone, Boolean isLibrarian) {
         this.id = id;
         this.name = name;
         this.gender = gender;
@@ -36,19 +39,19 @@ public class User {
         this.name = name;
     }
 
-    public Integer getGender() {
+    public Generic getGender() {
         return gender;
     }
 
-    public void setGender(Integer gender) {
+    public void setGender(Generic gender) {
         this.gender = gender;
     }
 
-    public Integer getCategory() {
+    public Generic getCategory() {
         return category;
     }
 
-    public void setCategory(Integer category) {
+    public void setCategory(Generic category) {
         this.category = category;
     }
 

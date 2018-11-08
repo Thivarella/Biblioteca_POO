@@ -1,21 +1,20 @@
 package boboteca.Model;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-
 public class Tax {
     private Integer id;
     private Book book;
     private User user;
     private String description;
     private Double value;
+    private Boolean isPaid;
 
-    public Tax(Integer id, Book book, User user, String description, Double value) {
+    public Tax(Integer id, Book book, User user, String description, Double value, Boolean isPaid) {
         this.id = id;
         this.book = book;
         this.user = user;
         this.description = description;
         this.value = value;
+        this.isPaid = isPaid;
     }
 
     public Integer getId() {
@@ -56,5 +55,13 @@ public class Tax {
 
     public void setValue(Double value) {
         this.value = value;
+    }
+
+    public Boolean getPaid() {
+        return isPaid;
+    }
+
+    public void setPaid(Boolean paid) {
+        isPaid = paid;
     }
 }

@@ -1,20 +1,17 @@
 package boboteca.Model;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
-
 public class Book {
     private Integer id;
     private String name;
     private String author;
     private String category;
     private String year;
-    private Integer priority;
+    private Generic priority;
     private Boolean disponibility;
 
     public Book() {}
 
-    public Book(Integer id, String name, String author, String category, String year, Integer priority, Boolean disponibility) {
+    public Book(Integer id, String name, String author, String category, String year, Generic priority, Boolean disponibility) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -64,11 +61,11 @@ public class Book {
         this.year = year;
     }
 
-    public Integer getPriority() {
+    public Generic getPriority() {
         return priority;
     }
 
-    public void setPriority(Integer priority) {
+    public void setPriority(Generic priority) {
         this.priority = priority;
     }
 
@@ -79,4 +76,5 @@ public class Book {
     public void setDisponibility(Boolean disponibility) {
         this.disponibility = disponibility;
     }
+
 }

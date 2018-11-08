@@ -2,6 +2,7 @@ package boboteca.DAO;
 
 import boboteca.Model.Book;
 import boboteca.Utils.ConnectionFactory;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,14 +16,14 @@ public class BookDAO {
     public void insertBook(Book book){
         try {
             conn = ConnectionFactory.getConnection();
-            String sql = "INSERT INTO books (id, name, author, category, year, priority, disponibility ) VALUES (?,?,?,?,?,?,?);";
+            String sql = "INSERT INTO books (id, name, author, category, year, priority_id, disponibility ) VALUES (?,?,?,?,?,?,?);";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1,book.getId());
             ps.setString(2,book.getName());
             ps.setString(3,book.getAuthor());
             ps.setString(4,book.getCategory());
             ps.setString(5,book.getYear());
-            ps.setInt(6,book.getPriority());
+            ps.setInt(6, book.getPriority().getId());
             ps.setBoolean(7,book.getDisponibility());
             ps.execute();
         } catch (SQLException e) {
@@ -35,13 +36,13 @@ public class BookDAO {
     public void updateBook(Book book){
         try {
             conn = ConnectionFactory.getConnection();
-            String sql = "UPDATE books SET name=?, author=?, category=?, year=?, priority=?, disponibility=? WHERE id=?;";
+            String sql = "UPDATE books SET name=?, author=?, category=?, year=?, priority_id=?, disponibility=? WHERE id=?;";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1,book.getName());
             ps.setString(2,book.getAuthor());
             ps.setString(3,book.getCategory());
             ps.setString(4,book.getYear());
-            ps.setInt(5,book.getPriority());
+            ps.setInt(5, book.getPriority().getId());
             ps.setBoolean(6,book.getDisponibility());
             ps.setInt(7,book.getId());
             ps.execute();
@@ -94,7 +95,30 @@ public class BookDAO {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1,bookId);
             ResultSet resultSet = ps.executeQuery();
-            return getBook(resultSet);
+            Book book = new Book();
+            while (resultSet.next()) {
+                book = getBook(resultSet);
+            }
+            return book;
+        } catch (SQLException e) {
+            throw new RuntimeException();
+        } finally {
+            ConnectionFactory.close(conn);
+        }
+    }
+
+    public Book findBookByIdAndDisponibilityTrue(Integer bookId) {
+        try {
+            conn = ConnectionFactory.getConnection();
+            String sql = "SELECT * FROM books WHERE id=? AND disponibility= true";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, bookId);
+            ResultSet resultSet = ps.executeQuery();
+            Book book = new Book();
+            while (resultSet.next()) {
+                book = getBook(resultSet);
+            }
+            return book;
         } catch (SQLException e) {
             throw new RuntimeException();
         }finally {
@@ -109,7 +133,7 @@ public class BookDAO {
                 resultSet.getString(3),
                 resultSet.getString(4),
                 resultSet.getString(5),
-                resultSet.getInt(6),
+                new GenericDAO().getPriorityById(resultSet.getInt(6)),
                 resultSet.getBoolean(7));
     }
 }

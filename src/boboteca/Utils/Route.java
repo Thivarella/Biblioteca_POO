@@ -8,4 +8,6 @@ public class Route {
     public static String USERVIEW = "/boboteca/Views/FXMLCadastroUsuario.fxml";
     public static String LOANVIEW = "/boboteca/Views/FXMLEmprestimo.fxml";
     public static String TAXVIEW = "/boboteca/Views/FXMLCadastroMultas.fxml";
+    public static String CONFIRMDELETIONVIEW = "/boboteca/Views/FXMLConfirmDeletion.fxml";
+    public static String CONFIRMTAXES = "/boboteca/Views/FXMLTaxGenerated.fxml";
 }

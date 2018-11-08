@@ -24,7 +24,11 @@ public class FXMLHomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        try {
+            changePanel(Route.BOOKVIEW);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void changePanel(String path) throws IOException {

@@ -1607,9 +1607,10 @@ a.badge:hover, a.badge:focused {
   -fx-font-family: "Helvetica Neue eText Pro";
   -fx-font-size: 17;
 }
-.low-stock{
-  -fx-text-fill: white;
-  -fx-background-color: red;
+
+.out-of-date {
+  -fx-highlight-text-fill: white;
+  -fx-background-color: rgba(255, 31, 22, 0.51);
 }
 
 .form-control {

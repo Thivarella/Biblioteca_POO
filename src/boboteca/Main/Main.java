@@ -13,6 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception{
+//        new CreateDatabase().createTables();
 //        if(loadMainView()){
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(FXMLHomeController.class.getResource(Route.MAINVIEW));

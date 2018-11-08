@@ -1,7 +1,6 @@
 package boboteca.DAO;
 
 import boboteca.Model.Address;
-import boboteca.Model.Book;
 import boboteca.Utils.ConnectionFactory;
 
 import java.sql.Connection;
@@ -38,7 +37,8 @@ public class AddresDAO {
         }
     }
 
-    public void updateAddress(Address address){
+    public Boolean updateAddress(Address address) {
+        Boolean updated = false;
         try {
             conn = ConnectionFactory.getConnection();
             String sql = "UPDATE address SET street=?, number=?, complement=?, neighborhood=?, cep=?, city=?, state=? WHERE id=?;";
@@ -52,10 +52,12 @@ public class AddresDAO {
             ps.setString(7,address.getState());
             ps.setInt(8,address.getId());
             ps.execute();
+            updated = true;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }finally {
             ConnectionFactory.close(conn);
+            return updated;
         }
     }
 

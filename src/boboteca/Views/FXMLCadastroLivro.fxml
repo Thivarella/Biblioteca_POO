@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
-<?import javafx.geometry.*?>
 <?import com.jfoenix.controls.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="600.0" prefWidth="950.0" stylesheets="@../bootstrapfx.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boboteca.Controllers.FXMLConsultaController">
+<?import java.lang.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="950.0" stylesheets="@../bootstrapfx.css"
+            xmlns="http://javafx.com/javafx/8" fx:controller="boboteca.Controllers.FXMLCadastroLivrosController">
    <children>
       <TableView fx:id="bookTableView" layoutX="9.0" layoutY="48.0" prefHeight="294.0" prefWidth="930.0" AnchorPane.bottomAnchor="266.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
          <columns>
             <TableColumn fx:id="bookId" editable="false" prefWidth="62.0" resizable="false" text="Código" />
-            <TableColumn fx:id="bookName" editable="false" prefWidth="247.0" resizable="false" text="Nome" />
-            <TableColumn fx:id="bookAuthor" editable="false" minWidth="9.0" prefWidth="248.0" resizable="false" text="Autor" />
-            <TableColumn fx:id="bookCategory" editable="false" minWidth="9.0" prefWidth="114.0" resizable="false" text="Categoria" />
-            <TableColumn fx:id="bookYear" editable="false" minWidth="9.0" prefWidth="160.0" resizable="false" text="Ano de publicação" />
-            <TableColumn fx:id="bookDisponibility" editable="false" minWidth="9.0" prefWidth="97.0" resizable="false" text="Disponível" />
+             <TableColumn fx:id="bookName" editable="false" prefWidth="258.0" resizable="false" text="Nome"/>
+             <TableColumn fx:id="bookAuthor" editable="false" minWidth="9.0" prefWidth="244.0" resizable="false"
+                          text="Autor"/>
+             <TableColumn fx:id="bookCategory" editable="false" minWidth="9.0" prefWidth="86.0" resizable="false"
+                          text="Categoria"/>
+             <TableColumn fx:id="bookYear" editable="false" minWidth="9.0" prefWidth="144.0" resizable="false"
+                          text="Ano de publicação"/>
+             <TableColumn fx:id="bookDisponibility" editable="false" minWidth="9.0" prefWidth="96.0" resizable="false"
+                          text="Disponível"/>
+             <TableColumn fx:id="bookRemove" editable="false" minWidth="20.0" prefWidth="38.0" resizable="false"
+                          sortable="false"/>
          </columns>
       </TableView>
       <AnchorPane fx:id="bookPane" disable="true" layoutX="243.0" layoutY="344.0" prefHeight="140.0" prefWidth="464.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="243.0" AnchorPane.rightAnchor="243.0">
