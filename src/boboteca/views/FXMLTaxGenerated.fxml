@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<AnchorPane prefHeight="271.0" prefWidth="508.0" style="-fx-background-color: white;" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boboteca.controllers.FXMLTaxGeneratedController">
+   <children>
+      <VBox alignment="CENTER" layoutX="201.0" layoutY="-31.0" prefHeight="177.0" prefWidth="501.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="226.0" prefWidth="508.0">
+               <children>
+                  <TableView fx:id="taxTable" prefHeight="125.0" prefWidth="472.0">
+                    <columns>
+                      <TableColumn fx:id="taxId" editable="false" prefWidth="64.0" resizable="false" text="Código" />
+                      <TableColumn fx:id="taxDescription" editable="false" prefWidth="311.0" resizable="false" text="Descrição" />
+                        <TableColumn fx:id="taxValue" editable="false" prefWidth="59.0" resizable="false" text="Valor" />
+                        <TableColumn fx:id="taxBtn" editable="false" prefWidth="36.0" resizable="false" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="508.0">
+               <children>
+                  <JFXButton fx:id="payAllBtn" onAction="#payAll" ripplerFill="WHITE" text="Pagar todas">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-success" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton fx:id="payLaterBtn" onAction="#payLater" ripplerFill="WHITE" text="Pagar depois">
+                     <styleClass>
+                        <String fx:value="btn" />
+                        <String fx:value="btn-info" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="50.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

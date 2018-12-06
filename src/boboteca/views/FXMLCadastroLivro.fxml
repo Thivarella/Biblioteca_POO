@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<AnchorPane prefHeight="600.0" prefWidth="950.0" stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boboteca.controllers.FXMLCadastroLivrosController">
+   <children>
+      <TableView fx:id="bookTableView" layoutX="9.0" layoutY="48.0" prefHeight="294.0" prefWidth="930.0" AnchorPane.bottomAnchor="266.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="50.0">
+         <columns>
+            <TableColumn fx:id="bookId" editable="false" prefWidth="62.0" resizable="false" text="Código" />
+             <TableColumn fx:id="bookName" editable="false" prefWidth="258.0" resizable="false" text="Nome" />
+             <TableColumn fx:id="bookAuthor" editable="false" minWidth="9.0" prefWidth="244.0" resizable="false" text="Autor" />
+             <TableColumn fx:id="bookCategory" editable="false" minWidth="9.0" prefWidth="86.0" resizable="false" text="Categoria" />
+             <TableColumn fx:id="bookYear" editable="false" minWidth="9.0" prefWidth="97.0" resizable="false" text="     Ano &#10;      de &#10;Publicação" />
+             <TableColumn fx:id="bookDisponibility" editable="false" minWidth="9.0" prefWidth="120.0" resizable="false" text="Disponível" />
+             <TableColumn fx:id="bookRemove" editable="false" minWidth="20.0" prefWidth="38.0" resizable="false" sortable="false" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <AnchorPane fx:id="bookPane" disable="true" layoutX="243.0" layoutY="344.0" prefHeight="140.0" prefWidth="464.0" AnchorPane.bottomAnchor="87.0" AnchorPane.leftAnchor="243.0" AnchorPane.rightAnchor="243.0">
+         <children>
+            <VBox layoutX="132.0" layoutY="-31.0" prefHeight="287.0" prefWidth="464.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="464.0">
+                     <children>
+                        <JFXTextField fx:id="txtBookCode" disable="true" editable="false" labelFloat="true" prefHeight="25.0" prefWidth="67.0" promptText="Código">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtBookName" labelFloat="true" prefHeight="25.0" prefWidth="345.0" promptText="Nome">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="1.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="464.0">
+                     <children>
+                        <JFXTextField fx:id="txtBookAuthor" labelFloat="true" prefHeight="25.0" prefWidth="236.0" promptText="Autor">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                        <JFXTextField fx:id="txtBookCategory" labelFloat="true" prefHeight="25.0" prefWidth="171.0" promptText="Categoria">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="1.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="464.0">
+                     <children>
+                        <JFXTextField fx:id="txtBookYear" labelFloat="true" onKeyTyped="#check" prefHeight="25.0" prefWidth="131.0" promptText="Ano de publicação">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXTextField>
+                        <JFXCheckBox fx:id="bookDisponibilityCheck" prefHeight="18.0" prefWidth="133.0" text="Disponibilidade">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXCheckBox>
+                        <JFXComboBox fx:id="bookPrioritySelect" labelFloat="true" prefHeight="25.0" prefWidth="113.0" promptText="Prioridade">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </JFXComboBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="1.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="464.0">
+                     <VBox.margin>
+                        <Insets bottom="1.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children></AnchorPane>
+      <AnchorPane layoutX="243.0" layoutY="517.0" prefHeight="93.0" prefWidth="464.0" AnchorPane.leftAnchor="243.0" AnchorPane.rightAnchor="243.0">
+         <children>
+            <VBox prefHeight="93.0" prefWidth="464.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox fx:id="bookBtnPane" alignment="CENTER" prefHeight="40.0" prefWidth="464.0">
+                     <children>
+                        <JFXButton fx:id="saveBtn" onAction="#saveBook" prefHeight="20.0" prefWidth="91.0" text="Inserir">
+                           <styleClass>
+                              <String fx:value="btn" />
+                              <String fx:value="btn-info" />
+                           </styleClass>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="50.0" right="50.0" top="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton fx:id="updateBtn" disable="true" onAction="#updateBook" style="-fx-background-color: darkOrange; -fx-text-fill: white;" styleClass="btn" text="Alterar">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="50.0" right="50.0" top="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="bookBtnPane1" alignment="CENTER" prefHeight="90.0" prefWidth="464.0">
+                     <children>
+                        <JFXButton fx:id="exportBook" onAction="#exportBook" prefHeight="32.0" prefWidth="138.0" text="Gerar Relatório">
+                           <styleClass>
+                              <String fx:value="btn" />
+                              <String fx:value="btn-default" />
+                           </styleClass>
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="50.0" right="50.0" top="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <HBox alignment="CENTER_LEFT" layoutX="603.0" layoutY="50.0" prefHeight="45.0" prefWidth="200.0" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTextField fx:id="searchText" labelFloat="true" prefHeight="25.0" prefWidth="288.0" promptText="Consulta">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </JFXTextField>
+            <JFXRadioButton fx:id="searchBookByName" selected="true" text="Por nome" wrapText="true">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="changeFilter" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="searchBookByAuthor" text="Por autor" toggleGroup="$changeFilter">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </JFXRadioButton>
+            <JFXRadioButton fx:id="searchBookByCategory" text="Por Categoria" toggleGroup="$changeFilter">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="50.0" top="10.0" />
+               </HBox.margin>
+            </JFXRadioButton>
+            <JFXToggleButton fx:id="availableOnly" onAction="#filterAvailables" prefHeight="60.0" prefWidth="202.0" size="8.0" text="Apenas disponíveis">
+               <HBox.margin>
+                  <Insets left="50.0" />
+               </HBox.margin>
+            </JFXToggleButton>
+         </children>
+      </HBox>
+      <AnchorPane fx:id="bookingPanel" layoutX="193.0" layoutY="527.0" prefHeight="93.0" prefWidth="527.0" visible="false" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="420.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="90.0" prefWidth="464.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <JFXButton fx:id="bookingBtn" disable="true" onAction="#bookingBook" prefHeight="43.0" prefWidth="260.0" text="Reservar Livro">
+                     <styleClass>
+                        <String fx:value="btn-lg" />
+                        <String fx:value="btn" />
+                        <String fx:value="btn-info" />
+                     </styleClass>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="50.0" right="50.0" top="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

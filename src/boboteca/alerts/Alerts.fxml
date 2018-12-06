@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="80.0" prefWidth="400.0" style="-fx-background-radius: 10; -fx-border-radius: 10;"
+            stylesheets="@../bootstrap.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="boboteca.alerts.AlertsController">
+   <VBox alignment="CENTER" layoutX="53.0" layoutY="-60.0" prefHeight="80.0" prefWidth="400.0"
+         stylesheets="@../bootstrap.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+         AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label fx:id="lblMessage" alignment="CENTER" contentDisplay="CENTER" text="Label" textAlignment="CENTER"
+             wrapText="true">
+         <VBox.margin>
+            <Insets/>
+         </VBox.margin>
+      </Label>
+   </VBox>
+   <Label onMouseClicked="#handleCloseable" text="X" AnchorPane.rightAnchor="10.0"
+          AnchorPane.topAnchor="5.0"/>
+</AnchorPane>
